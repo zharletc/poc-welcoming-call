@@ -84,6 +84,6 @@ export default {
   },
   server: {
     host: "127.0.0.1",
-    port: 3000, // default: 3000
+    port: process.env.PORT, // default: 3000
   },
 }
