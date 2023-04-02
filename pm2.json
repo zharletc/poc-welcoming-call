@@ -1,0 +1,8 @@
+{
+  "apps": [
+      {
+          "name": "poc-fe-welcoming-call",
+          "script": "npm run dev"
+      }
+  ]
+}
