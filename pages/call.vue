@@ -71,12 +71,12 @@
     <v-dialog v-model="setupDevicesDialog" width="500">
       <v-card tile>
         <v-card-title class="text-h5 lighten-2 title-orange">
-          Set Default Microphone
+          Confirm Call
         </v-card-title>
         <br />
         <v-card-text>
-          Select Microphone
-          <v-select
+          Kamu akan menguhubungi customer dengan nomor : {{ call.number }}
+          <!-- <v-select
             :items="devices.mic"
             item-text="label"
             item-value="deviceId"
@@ -86,7 +86,7 @@
             class="investment_type_option"
             v-model="devices.selectedMic"
             @input="setSelectedMic"
-          ></v-select>
+          ></v-select> -->
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
@@ -97,7 +97,7 @@
             text
             @click="setupDevicesDialog = false"
           >
-            Cancel
+            Tidak
           </v-btn>
           <v-btn
             color="#F7931D"
@@ -105,7 +105,7 @@
             text
             @click="applyDevice"
           >
-            Apply
+            Ya
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -122,10 +122,10 @@ export default {
     return {
       agentVoiceUp: "",
       custVoiceUp: "",
-      setupDevicesDialog: false,
+      setupDevicesDialog: true,
       totalSeconds: "00",
       totalMinutes: "00",
-      connecting: true,
+      connecting: false,
       devices: {
         selectedMic: null,
         selectedCamera: null,
@@ -145,7 +145,7 @@ export default {
   },
   mounted() {
     this.call.number = this.$route.query.number;
-    this.loadDevices();
+    // this.loadDevices();
   },
   methods: {
     hangUp: async function () {},
@@ -177,8 +177,8 @@ export default {
         logLevel: 1,
         codecPreferences: ["opus", "pcmu"],
       });
-      device.audio.speakerDevices.set(this.devices.defaultMic);
-      device.audio.ringtoneDevices.set(this.devices.defaultMic);
+      // device.audio.speakerDevices.set(this.devices.defaultMic);
+      // device.audio.ringtoneDevices.set(this.devices.defaultMic);
       this.call.event = await device.connect({
         params: { To: this.call.number },
       });
@@ -264,6 +264,7 @@ export default {
     applyDevice: function () {
       this.devices.defaultMic = this.devices.selectedMic;
       this.setupDevicesDialog = false;
+      this.connecting = true;
       this.callMe();
     },
   },
