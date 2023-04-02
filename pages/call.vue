@@ -262,7 +262,7 @@ export default {
       this.devices.selectedMic = device_id;
     },
     applyDevice: function () {
-      this.devices.defaultMic = this.devices.selectedMic;
+      // this.devices.defaultMic = this.devices.selectedMic;
       this.setupDevicesDialog = false;
       this.connecting = true;
       this.callMe();
