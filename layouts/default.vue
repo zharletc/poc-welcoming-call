@@ -106,7 +106,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'BNI Life Welcoming Call'
+      title: 'BNI Life Autodial Outbond'
     }
   }
 }
