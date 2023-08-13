@@ -3,18 +3,24 @@
     <thead>
       <tr>
         <th>Call SID</th>
-        <th>Recording SID</th>
-        <th>Duration (seconds)</th>
+        <th>Dialer</th>
+        <th>To</th>
+        <th>Status</th>
+        <th>Call Duration (seconds)</th>
+        <th>Call At</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="recording in recordings" :key="recording.sid">
-        <td>{{ recording.callSid }}</td>
-        <td>{{ recording.sid }}</td>
+      <tr v-for="recording in recordings" :key="recording.sid" v-if="recording.direction == 'outbound-dial'">
+        <td>{{ recording.parentCallSid }}</td>
+        <td>{{ recording.from }}</td>
+        <td>{{ recording.to }}</td>
+        <td>{{ recording.status }}</td>
         <td>{{ recording.duration }}</td>
+        <td>{{ $moment(recording.startTime).format("DD MMM YYYY HH:mm:s") }}</td>
         <td>
-          <button @click="fetchTranscriptions(recording.callSid)">Detail</button>
+          <button @click="fetchTranscriptions(recording.parentCallSid)" style='border-radius:7px;'>Detail</button>
         </td>
       </tr>
     </tbody>

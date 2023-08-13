@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Recordings</h1>
+    <h1>Call Logs</h1>
     <RecordingsTable :recordings="recordings" />
   </div>
 </template>

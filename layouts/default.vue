@@ -104,8 +104,8 @@ export default {
         },
         {
           icon: 'mdi-file-document',
-          title: 'Recording Logs',
-          to: '/recordings'
+          title: 'Call Logs',
+          to: '/call-logs'
         },
       ],
       miniVariant: false,

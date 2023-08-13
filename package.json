@@ -15,11 +15,14 @@
     "nuxt": "^2.15.8",
     "twilio": "^4.9.0",
     "vue": "^2.7.10",
+    "vue-moment": "^4.1.0",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
     "vuetify": "^2.6.10"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.3"
+    "@nuxtjs/moment": "^1.6.1",
+    "@nuxtjs/vuetify": "^1.12.3",
+    "moment": "^2.29.4"
   }
 }
