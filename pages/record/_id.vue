@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Recording & Transcription</h1>
+    <h1>Call & Recording Information</h1>
     <div v-if="loading">
       <div><strong><i>Loading Data...</i></strong></div>
     </div>
@@ -27,7 +27,7 @@
         </template>
 
       </div>
-      <h2>Transcriptions</h2>
+      <!-- <h2>Transcriptions</h2>
       <template v-if="recordings">
         <div v-for="(transcription, index) in recordings.sentences" :key="index">
           <div
@@ -41,7 +41,7 @@
           </div>
 
         </div>
-      </template>
+      </template> -->
     </div>
 
 
